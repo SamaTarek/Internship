@@ -21,12 +21,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:background="@drawable/edittext_style"
             android:hint="Username"
+            android:inputType="textPersonName|text"
             android:padding="10dp"
             android:singleLine="true"
-            android:inputType="textCapWords"
             android:textColor="#000000"
-            android:textColorHint="#000000"/>
+            android:textColorHint="#000000" />
 
 
         <EditText
@@ -34,8 +35,9 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
+            android:background="@drawable/edittext_style"
             android:hint="Phone number"
-            android:inputType="phone"
+            android:inputType="number|phone"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="#000000"
@@ -48,22 +50,11 @@
             android:layout_marginBottom="10dp"
             android:hint="Password"
             android:inputType="textPassword"
+            android:background="@drawable/edittext_style"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="#000000"
             android:textColorHint="#000000"/>
-
-        <EditText
-            android:id="@+id/cofirmPassword"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:textColor="#000000"
-            android:textColorHint="#000000" />
 
         <!-- Login Button -->
 
@@ -73,7 +64,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dip"
             android:text="SignUp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:background="@drawable/button_edit"/>
 
         <!-- Link to Login Screen -->
 
@@ -85,7 +77,8 @@
             android:text="Already a user? Sign in"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:background="@drawable/button_edit"/>
     </LinearLayout>
 
 </LinearLayout>

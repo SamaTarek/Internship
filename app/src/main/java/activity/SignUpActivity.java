@@ -1,4 +1,4 @@
-package Activity;
+package activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -23,8 +23,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import App.AppConfig;
-import App.AppController;
+import app.AppConfig;
+import app.AppController;
 import Helper.SQLiteHandler;
 import Helper.SessionManager;
 
@@ -48,7 +48,6 @@ public class SignUpActivity extends AppCompatActivity {
         Name = (EditText) findViewById(R.id.name);
         Phonenumber=(EditText)findViewById(R.id.phone);
         Password = (EditText) findViewById(R.id.password);
-        ConfirmPassword = (EditText) findViewById(R.id.cofirmPassword);
         Sign_up = (Button) findViewById(R.id.btnRegister);
         Login = (Button) findViewById(R.id.btnLinkToLoginScreen);
 
@@ -79,15 +78,15 @@ public class SignUpActivity extends AppCompatActivity {
                 String name = Name.getText().toString().trim();
                 String phone = Phonenumber.getText().toString().trim();
                 String password = Password.getText().toString().trim();
-                String pass2 = ConfirmPassword.getText().toString().trim();
 
 
 
 
 
-                if (!name.isEmpty() && !phone.isEmpty() && !password.isEmpty() &&   !pass2.isEmpty()) {
-                    registerUser(name, phone, password,pass2);
-                    //System.out.print(name+" "+password+" "+email+" "+Nat+" "+Age+" "+phone);
+
+                if (!name.isEmpty() && !phone.isEmpty() && !password.isEmpty()) {
+                    registerUser(name, phone, password);
+                    //System.out.print(name+" "+phone+" "+password);
 
 
                 } else {
@@ -115,7 +114,7 @@ public class SignUpActivity extends AppCompatActivity {
      * Function to store user in MySQL database will post params(tag, name,
      * email, password) to register url
      * */
-    private void registerUser(final String name,final String phone , final String password,final String pass2 ) {
+    private void registerUser(final String name,final String phone , final String password ) {
         // Tag used to cancel the request
         String tag_string_req = "req_register";
 
@@ -188,7 +187,7 @@ public class SignUpActivity extends AppCompatActivity {
                 params.put("name", name);
                 params.put("phonenumber", phone);
                 params.put("password", password);
-                params.put("confirmpassword", pass2);
+
 
 
 

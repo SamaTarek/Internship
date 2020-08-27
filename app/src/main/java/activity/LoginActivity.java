@@ -1,4 +1,4 @@
-package Activity;
+package activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -23,8 +23,8 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-import App.AppConfig;
-import App.AppController;
+import app.AppConfig;
+import app.AppController;
 import Helper.SQLiteHandler;
 import Helper.SessionManager;
 
@@ -35,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText Password;
     private SessionManager session;
     private SQLiteHandler db;
+ private Button  gooo;
     private ProgressDialog pDialog;
     private static final String TAG = SignUpActivity.class.getSimpleName();
 
@@ -47,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         Password = (EditText) findViewById(R.id.editText2);
         login = (Button) findViewById(R.id.button);
         sign_up = (Button) findViewById(R.id.button2);
+        //gooo=(Button) findViewById(R.id.button3);
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
         db = new SQLiteHandler(getApplicationContext());
@@ -64,7 +66,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-
+  /*      gooo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openMapsActiv();
+            }
+        });
+*/
 
         login.setOnClickListener(new View.OnClickListener() {
 
@@ -99,6 +107,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    public void openMapsActiv()
+    {
+        Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
         private void checkLogin(final String phone, final String password) {
             // Tag used to cancel the request
             String tag_string_req = "req_login";
