@@ -32,7 +32,7 @@ android:padding="10dp" >
             android:background="@drawable/edittext_style"
             android:hint="Phone Number"
             android:layout_gravity="center"
-
+            android:inputType="number|phone"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="#000000"
