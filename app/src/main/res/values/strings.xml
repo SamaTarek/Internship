@@ -14,4 +14,14 @@
         completions."
     </string>
     <string name="title_activity_maps">Map</string>
+
+        <string-array name="Areas">
+            <item>-- Select Area --</item>
+            <item>CA</item>
+            <item>AL</item>
+            <item>UP</item>
+            <item>DE</item>
+            <item>RE</item>
+            <item>SI</item>
+        </string-array>
 </resources>
