@@ -17,6 +17,7 @@
         android:paddingRight="20dp">
 
 
+        <!-- site code will be removed from here and entered in next activities-->
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
@@ -70,7 +71,8 @@
             android:layout_marginTop="20dip"
             android:background="@drawable/button_edit"
             android:text="Pre-paid/Recharge"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btnLeg"
@@ -79,7 +81,8 @@
             android:layout_marginTop="20dip"
             android:background="@drawable/button_edit"
             android:text="Legacy"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <!-- Link to Login Screen -->
 
