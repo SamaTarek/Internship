@@ -29,6 +29,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String LegacyData_url="http://10.0.2.2/orangeapp/recordLegacy.php";
+        String RechargeData_url= "http://10.0.2.2/orangeapp/recordRecharge.php";
         String method = params[0];
         if(method.equals("legacyData"))
         {
@@ -57,6 +58,42 @@ public class BackgroundTask extends AsyncTask<String,Void,String> {
                 e.printStackTrace();
             }
         }
+        else
+            if(method.equals("rechargeData"))
+            {
+                String code=params[1];
+                String accumReading=params[2];
+                String preReadingBefKWH= params[3];
+                String preReadingBefEGP=params[4];
+                String preReadingAftKWH = params[5];
+                String preReadingAftEGP= params[6];
+                try {
+                    URL url =new URL(RechargeData_url);
+                    HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                    httpURLConnection.setRequestMethod("POST");
+                    httpURLConnection.setDoOutput(true);
+                    OutputStream OS = httpURLConnection.getOutputStream();
+                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(OS,"UTF-8"));
+                    String data = URLEncoder.encode("code","UTF-8") +"="+URLEncoder.encode(code,"UTF-8")+"&"+
+                            URLEncoder.encode("accumReading","UTF-8") +"="+URLEncoder.encode(accumReading,"UTF-8")+"&"+
+                            URLEncoder.encode("preReadingBefKWH","UTF-8") +"="+URLEncoder.encode(preReadingBefKWH,"UTF-8")+"&"+
+                            URLEncoder.encode("preReadingBefEGP","UTF-8") +"="+URLEncoder.encode(preReadingBefEGP,"UTF-8")+"&"+
+                            URLEncoder.encode("preReadingAftKWH","UTF-8") +"="+URLEncoder.encode(preReadingAftKWH,"UTF-8")+"&"+
+                            URLEncoder.encode("preReadingAftEGP","UTF-8") +"="+URLEncoder.encode(preReadingAftEGP,"UTF-8");
+                    bufferedWriter.write(data);
+                    bufferedWriter.flush();
+                    bufferedWriter.close();
+                    OS.close();
+                    InputStream IS = httpURLConnection.getInputStream();
+                    IS.close();
+                    return "Data stored successfully!";
+                } catch (MalformedURLException e){
+                    e.printStackTrace();
+                }
+                catch (IOException z) {
+                    z.printStackTrace();
+                }
+            }
         return null;
     }
 

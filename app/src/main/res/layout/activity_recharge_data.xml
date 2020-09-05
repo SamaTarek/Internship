@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#D1D0CE"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="10dp" >
-
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="611dp"
+        android:layout_height="609dp"
         android:layout_gravity="center"
         android:orientation="vertical"
         android:paddingLeft="20dp"
@@ -26,7 +33,44 @@
 
             android:text="Recharge PM data"
             android:textColor="#000000"
-            android:textSize="36sp" />
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Enter Site Code:"
+            android:textColor="#000000"
+
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/code"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/edittext_style"
+            android:hint="4 digits and 2 letters"
+            android:inputType="text"
+            android:maxLength="6"
+            android:padding="10dp"
+
+            android:textColor="#000000"
+
+            android:textColorHint="#686666" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Enter Data:"
+            android:textColor="#000000"
+
+            android:textSize="24sp" />
+
 
         <EditText
             android:id="@+id/AccumReading"
@@ -125,17 +169,20 @@
             android:textColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/btnDone"
+            android:id="@+id/btnDone1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dip"
             android:background="@drawable/button_edit"
             android:text="Done"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:onClick="record1"/>
 
         <!-- Link to Login Screen -->
 
     </LinearLayout>
 
+    </ScrollView>
 
 </LinearLayout>
+
